@@ -4,7 +4,10 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui
+{
+    class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -12,13 +15,30 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
-private:
-    Ui::MainWindow *ui;
+private slots:
+    void on_renameBtn_clicked();
 
-    void createForm();
+    void on_deleteBtn_clicked();
+
+    void on_reloadBtn_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_comboBox_currentIndexChanged(const QString& arg1);
+
+    void on_actionConnect_triggered();
+
+    void on_actionDisconnect_triggered();
+
+private:
+    Ui::MainWindow* ui;
+
+//    void createForm();
+
+    void clearKvTab();
 
 
 };
