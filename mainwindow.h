@@ -1,6 +1,8 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QTreeWidget>
+
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -32,6 +34,8 @@ private slots:
     void on_actionConnect_triggered();
 
     void on_actionDisconnect_triggered();
+
+    void on_treeWidget_itemDoubleClicked(QTreeWidgetItem* item, int column);
 
 private:
     Ui::MainWindow* ui;

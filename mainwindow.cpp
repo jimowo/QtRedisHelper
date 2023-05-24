@@ -346,3 +346,11 @@ void MainWindow::on_actionDisconnect_triggered()
 
     clearKvTab();
 }
+
+void MainWindow::on_treeWidget_itemDoubleClicked(QTreeWidgetItem* item, int column)
+{
+    Q_UNUSED(column);
+    ui->keyLineEdit->setText(item->text(0));
+    ui->typeLabel->setText(item->text(1));
+    ui->sizeLabel->setText("Size: " + item->text(2));
+}
